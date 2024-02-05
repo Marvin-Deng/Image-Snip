@@ -22,7 +22,7 @@ class ScreenRegionSelector(QMainWindow):
         self.m_width = 400
         self.m_height = 500
 
-        self.setWindowTitle("Screen Capturer")
+        self.setWindowTitle("Text Extractor")
         self.setMinimumSize(self.m_width, self.m_height)
 
         frame = QFrame()
@@ -41,7 +41,8 @@ class ScreenRegionSelector(QMainWindow):
 
         self.btn_extract = QPushButton("Extract")
         self.btn_extract.clicked.connect(self.extract_text)
-        self.btn_extract.setVisible(False)
+
+        self.setHandCursor([self.btn_capture, self.btn_save, self.btn_extract])
 
         self.text_edit = QTextEdit()
         self.text_edit.setMinimumSize(350, 200)
@@ -65,7 +66,6 @@ class ScreenRegionSelector(QMainWindow):
         self.capturer = Capture(self)
         self.capturer.show()
         self.btn_save.setVisible(True)
-        self.btn_extract.setVisible(True)
 
     def save(self):
         file_name, _ = QFileDialog.getSaveFileName(
@@ -83,6 +83,10 @@ class ScreenRegionSelector(QMainWindow):
 
         self.text_edit.setText(text[:-1])
         self.text_edit.setVisible(True)
+
+    def setHandCursor(self, buttons):
+        for button in buttons:
+            button.setCursor(Qt.PointingHandCursor)
 
 
 if __name__ == "__main__":
