@@ -55,6 +55,12 @@ class ScreenRegionSelector(QMainWindow):
 
         self.setCentralWidget(frame)
 
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_C:
+            self.capture()
+        else:
+            super().keyPressEvent(event)
+
     def capture(self):
         self.capturer = Capture(self)
         self.capturer.show()
