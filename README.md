@@ -10,7 +10,7 @@ You need to have Python 3.6 or higher. You'll also need to install Tesseract, an
 
 Tesseract OCR needs to be installed separately as it's an external dependency used by the Pytesseract library. Installation instructions vary by operating system:
 
-###Mac
+### Mac
 
 ```bash
 brew install tesseract
@@ -19,7 +19,7 @@ brew install tesseract
 ### Ubuntu
 
 ```bash
-`sudo apt install tesseract-ocr`
+sudo apt install tesseract-ocr
 ```
 
 ### Windows:
@@ -33,17 +33,17 @@ Example: `path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"`
 
 Create a virtual environment
 ```python
-`python -m venv venv`
-`venv/Scripts/activate`
+python -m venv venv
+venv/Scripts/activate
 ```
 
 Install libraries
 ```python
-`pip install requirements.txt `
+pip install requirements.txt 
 ```
 
 ## Running
 ```python
-`python main.py`
+python main.py
 ```
 
